@@ -1,5 +1,5 @@
-import React from "react";
-import "./Login.css";
+import React from 'react';
+import './Login.css';
 
 function Login() {
   return (
@@ -13,7 +13,7 @@ function Login() {
         <button>OK</button>
       </div>
     </React.Fragment>
-  );
+  )
 }
 
 export default Login;

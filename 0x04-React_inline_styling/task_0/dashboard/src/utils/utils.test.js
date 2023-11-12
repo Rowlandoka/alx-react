@@ -1,6 +1,7 @@
-import { getFooterCopy, getFullYear, getLatestNotification } from "./utils";
+import { getFooterCopy, getFullYear, getLatestNotification } from './utils';
 
 describe("Utils functions", () => {
+  
   test("getFullYear returns the correct year", () => {
     expect(getFullYear()).toEqual(2023);
   });
@@ -14,8 +15,7 @@ describe("Utils functions", () => {
   });
 
   test("getLatestNotification returns the expected string", () => {
-    expect(getLatestNotification()).toEqual(
-      "<strong>Urgent requirement</strong> - complete by EOD"
-    );
+    expect(getLatestNotification()).toEqual("<strong>Urgent requirement</strong> - complete by EOD");
   });
+
 });

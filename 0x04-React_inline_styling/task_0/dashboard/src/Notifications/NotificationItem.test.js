@@ -1,9 +1,9 @@
-import React from "react";
-import { shallow } from "enzyme";
-import NotificationItem from "./NotificationItem";
+import React from 'react';
+import { shallow } from 'enzyme';
+import NotificationItem from './NotificationItem';
 
 describe("Testing <NotificationItem />", () => {
-  let wrapper;
+  let  wrapper;
 
   it("<NotificationItem /> renders without crashing", () => {
     wrapper = shallow(<NotificationItem />);
@@ -17,9 +17,7 @@ describe("Testing <NotificationItem />", () => {
   });
 
   it("<NotificationItem />  renders the correct html by passing a dummy html prop,", () => {
-    wrapper = shallow(<NotificationItem html={{ __html: "<u>test</u>" }} />);
-    expect(wrapper.find("li").html()).toBe(
-      '<li data-notification-type="default"><u>test</u></li>'
-    );
+    wrapper = shallow(<NotificationItem html={{__html:"<u>test</u>"}} />);
+    expect(wrapper.find("li").html()).toBe("<li data-notification-type=\"default\"><u>test</u></li>");
   });
 });

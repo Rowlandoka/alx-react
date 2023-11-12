@@ -1,6 +1,6 @@
-import React from "react";
-import { shallow } from "enzyme";
-import Footer from "./Footer";
+import React from 'react';
+import { shallow } from 'enzyme';
+import Footer from './Footer';
 
 describe("Testing <Footer /> component", () => {
   let wrapper;

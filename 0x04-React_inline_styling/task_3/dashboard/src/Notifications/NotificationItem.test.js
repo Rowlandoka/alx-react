@@ -1,11 +1,11 @@
-import React from "react";
-import { shallow } from "enzyme";
-import NotificationItem from "./NotificationItem";
-import { StyleSheetTestUtils } from "aphrodite";
+import React from 'react';
+import { shallow } from 'enzyme';
+import NotificationItem from './NotificationItem';
+import { StyleSheetTestUtils } from 'aphrodite';
 
 describe("Testing <NotificationItem />", () => {
-  let wrapper;
-
+  let  wrapper;
+  
   beforeEach(() => {
     StyleSheetTestUtils.suppressStyleInjection();
   });

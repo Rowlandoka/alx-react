@@ -11,13 +11,7 @@ class NotificationItem extends React.PureComponent {
             {value}
           </li>
         ) : null}
-        {html ? (
-          <li
-            onClick={() => markAsRead(id)}
-            data-urgent
-            dangerouslySetInnerHTML={{ __html: html }}
-          ></li>
-        ) : null}
+        {html ? <li onClick={() => markAsRead(id)} data-urgent dangerouslySetInnerHTML={{ __html: html }}></li> : null}
       </>
     );
   }

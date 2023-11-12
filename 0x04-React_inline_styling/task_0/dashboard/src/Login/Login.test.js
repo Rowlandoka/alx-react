@@ -1,6 +1,6 @@
-import React from "react";
-import Login from "./Login";
-import { shallow } from "enzyme";
+import React from 'react';
+import Login from './Login';
+import { shallow } from 'enzyme';
 
 describe("testing the <Login /> component", () => {
   let wrapper;

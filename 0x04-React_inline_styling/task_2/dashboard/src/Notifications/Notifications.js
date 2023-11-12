@@ -1,19 +1,21 @@
-import React, { Component } from "react";
-import { StyleSheet, css } from "aphrodite";
+import React from "react";
+import "./Notifications.css";
 import closeIcon from "../assets/close-icon.png";
 import NotificationItem from "./NotificationItem";
-import PropTypes from "prop-types";
+import PropeTypes from "prop-types";
 import NotificationItemShape from "./NotificationItemShape";
+import { StyleSheet, css } from "aphrodite";
 
-class Notifications extends Component {
+class Notifications extends React.Component {
   constructor(props) {
     super(props);
-
     this.markAsRead = this.markAsRead.bind(this);
   }
 
   shouldComponentUpdate(nextProps) {
-    return nextProps.length > this.props.listNotifications.length;
+    return (
+      nextProps.listNotifications.length > this.props.listNotifications.length
+    );
   }
 
   markAsRead(id) {
@@ -22,12 +24,10 @@ class Notifications extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <div className={css(styles.menuItem)}>
-          <p>Your notifications</p>
-        </div>
+      <>
+        <div className={css(notificationStyles.menuItem)}>Your notifications</div>
         {this.props.displayDrawer ? (
-          <div className={css(styles.Notifications)}>
+          <div className={css(notificationStyles.nofificatons)}>
             <button
               style={{
                 color: "#3a3a3a",
@@ -46,7 +46,7 @@ class Notifications extends Component {
                 console.log("Close button has been clicked");
               }}
             >
-              <img src={closeIcon} alt="close icon" width="10px" />
+              <img src={closeIcon} alt="close icon" width="15px" />
             </button>
             {this.props.listNotifications.length != 0 ? (
               <p>Here is the list of notifications</p>
@@ -73,50 +73,36 @@ class Notifications extends Component {
             </ul>
           </div>
         ) : null}
-      </React.Fragment>
+      </>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  Notifications: {
-    padding: "1em",
-    border: "2px dashed red",
+const notificationStyles = StyleSheet.create({
+  nofificatons: {
+    border: "3px dotted #e1484c",
+    padding: "6px 12px",
     position: "absolute",
-    top: "1.8em",
-    right: "0",
+    top: "21px",
+    right: "7px",
+    marginTop: "12px",
+    zIndex: 100,
   },
-
-  "notification-header": {
-    display: "flex",
-    justifyContent: "space-between",
-  },
-
   menuItem: {
-    textAlign: "right",
-  },
-
-  '[data-notification-type="default"]': {
-    color: "blue",
-  },
-
-  "[data-urgent]": {
-    color: "red",
-  },
-
-  '[data-notification-type="urgent"]': {
-    color: "red",
+    position: "absolute",
+    top: "7px",
+    right: "7px",
   },
 });
-
-Notifications.propTypes = {
-  displayDrawer: PropTypes.bool,
-  listNotifications: PropTypes.arrayOf(NotificationItemShape),
-};
 
 Notifications.defaultProps = {
   displayDrawer: false,
   listNotifications: [],
+};
+
+Notifications.propTypes = {
+  displayDrawer: PropeTypes.bool,
+  listNotifications: PropeTypes.arrayOf(NotificationItemShape),
 };
 
 export default Notifications;
